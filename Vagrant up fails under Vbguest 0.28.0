@@ -1,0 +1,16 @@
+#If you Have an error while working on Vagrant:
+/*
+The following SSH command responded with a non-zero exit status.
+Vagrant assumes that this means the command failed!
+
+umount /mnt
+
+Stdout from the command:
+
+Stderr from the command:
+
+umount: /mnt: not mounted
+*/
+#Run the below both the commands will solve the issue. Vagrant plugin Vbguest is not supporting 0.28.0 version, so you need to down-grade to 0.21 
+-> vagrant plugin uninstall vagrant-vbguest
+-> vagrant plugin install vagrant-vbguest --plugin-version 0.21
